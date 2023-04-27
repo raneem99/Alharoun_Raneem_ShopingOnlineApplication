@@ -7,7 +7,7 @@ httpStatus = require("http-status-codes"),
 
 
 router.get("/", (req, res) => {
-    res.writeHead(httpStatus.OK, contentTypes.htm);
+    res.writeHead(httpStatus.OK, contentTypes.html);
     utils.getFile("views/index.html", res);
 });
 router.get("/contact.html", (req, res) => {
@@ -79,6 +79,16 @@ router.get("/bootstrap.css", (req, res) => {
 router.get("/menu.css", (req, res) => {
     res.writeHead(httpStatus.OK, contentTypes.css);
     utils.getFile("public/css/menu.css", res);
+});
+
+router.get("/login.html", (req, res) => {
+    res.writeHead(httpStatus.OK, contentTypes.html);
+    utils.getFile("views/login.html", res);
+});
+
+router.get("/login.css", (req, res) => {
+    res.writeHead(httpStatus.OK, contentTypes.css);
+    utils.getFile("public/css/login.css", res);
 });
 
 
